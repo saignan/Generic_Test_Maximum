@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 
 namespace Generic_Test_Maximum
 {
-    internal class UC3
+    internal class UsingGenericFindMax
     {
-        public string maximumValue(string firstvalue, string secondvalue, string thirdvalue)
+        public T maximumValue<T>(T firstvalue, T secondvalue, T thirdvalue) where T : IComparable
         {
             if (firstvalue.CompareTo(secondvalue) > 0 && (firstvalue.CompareTo(thirdvalue) > 0))
             {
                 return firstvalue;
             }
             else if (secondvalue.CompareTo(firstvalue) > 0 && (secondvalue.CompareTo(thirdvalue) > 0))
-            {
-                return secondvalue;
-            }
+            { return secondvalue; }
             else if (thirdvalue.CompareTo(firstvalue) > 0 && (thirdvalue.CompareTo(secondvalue) > 0))
             {
                 return thirdvalue;
             }
             else
             {
-                return " ";
+                return firstvalue;
             }
 
         }
